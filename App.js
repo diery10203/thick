@@ -1,39 +1,23 @@
-import * as React from 'react';
-import {StatusBar} from 'expo-status-bar';
-import {StyleSheet, Text, View, Image, TouchableOpacity,} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import * as React from "react";
+import {NavigationContainer} from "@react-navigation/native";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import {Provider} from "react-redux";
 
-export default function Screen1(){
-  
-  return(
-    <View style = {styles.container} >
-      <View>
-        <Image source={require('./assets/1.png')}/>
-        <Text>Discover Your Home</Text>
-      </View>
 
-      <View style= {styles.btn_ls}>
-        <TouchableOpacity style ={styles.btn_log}>
-          <Text>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style = {styles.btn_log}>
-          <Text>Sign up</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  )
+import Screen1 from "./src/pages/Screen1";
+import Screen2 from "./src/pages/Screen2"
+
+export default function App() {
+
+  const Stack = createNativeStackNavigator();
+
+  return (
+      
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName = "Screen1">
+              <Stack.Screen name = "Screen1" component = {Screen1}/>
+              <Stack.Screen name = "Screen2" component = {Screen2}/>
+          </Stack.Navigator>    
+        </NavigationContainer>
+  );
 }
-const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    alignItems: 'center',
-  },
-  btn_ls:{
-    flexDirection: 'row',
-    padding: 10,
-  },
-  btn_log:{
-    borderWidth: 1,
-    borderRadius: 5,
-  },
-})
