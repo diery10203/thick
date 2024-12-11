@@ -3,7 +3,7 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 export const fetchBikes = createAsyncThunk(
   'bikes/fetchBikes',
   async () => {
-    const reponse = await fetch('https://6459feb465bd868e930d904a.mockapi.io/bike');
+    const reponse = await fetch('https://6715c21033bc2bfe40bb0796.mockapi.io/thigk');
     const data = await reponse.json();
     return data;
   }

@@ -74,7 +74,14 @@ export default function Screen2 (){
           <Text style={styles.container_touch1a}>Motel</Text>
         </TouchableOpacity>
       </View>
-     
+      <FlatList
+        data={filteredData} // Hiển thị danh sách sản phẩm đã lọc
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id.toString()}
+        numColumns={2} // Hiển thị dạng lưới 2 cột
+        columnWrapperStyle={styles.row} // Căn chỉnh hàng
+        contentContainerStyle={{ paddingBottom: 20 }}
+      />
     </View>
   );
 }
