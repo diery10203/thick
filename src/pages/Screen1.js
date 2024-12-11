@@ -20,6 +20,23 @@ export default function Screen1(){
           <Text>Sign up</Text>
         </TouchableOpacity>
       </View>
+
+      <View>
+        <View>
+          <TouchableOpacity style = {styles.dangnhap}>
+            <Image source ={require('../../assets/google.png')} />
+            <Text>Continue with Google</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source ={require('../../assets/apple-logo.png')} />
+            <Text>Continue with Apple</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source ={require('../../assets/facebook.png')} />
+            <Text>Continue with Facebook</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   )
 }
@@ -36,4 +53,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
   },
+  dangnhap:{
+    alignItems: 'space-around',
+  }
 })
